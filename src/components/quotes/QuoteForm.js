@@ -11,10 +11,8 @@ const QuoteForm = (props) => {
   const authorInputRef = useRef();
   const textInputRef = useRef();
 
-  function submitFormHandler(event) {
+  function submitFormHandler(event) { 
     event.preventDefault();
-    
-    setIsEntering(false);
 
     const enteredAuthor = authorInputRef.current.value;
     const enteredText = textInputRef.current.value;
@@ -22,11 +20,16 @@ const QuoteForm = (props) => {
     // optional: Could validate here
 
     props.onAddQuote({ author: enteredAuthor, text: enteredText });
+   
   }
 
   const focusHandler = () => {
     setIsEntering(true); 
   };
+
+  const resetIsEnteringHandler = () => {
+    setIsEntering(false); 
+  }
 
   return (
     <Fragment>
@@ -55,7 +58,7 @@ const QuoteForm = (props) => {
             <textarea id="text" rows="5" ref={textInputRef}></textarea>
           </div>
           <div className={classes.actions}>
-            <button className="btn">Add Quote</button>
+            <button onClick={resetIsEnteringHandler} className="btn">Add Quote</button>
           </div>
         </form>
       </Card>
