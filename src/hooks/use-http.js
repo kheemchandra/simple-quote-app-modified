@@ -45,10 +45,9 @@ export const useHttp = function(requestFunc, isPending=false){
   const sendRequest = useCallback(async (requestData) => {
     dispatch({type: 'Sending'})
     try{
-      const response = await requestFunc(requestData);
-            
+      const response = await requestFunc(requestData); 
       dispatch({type: 'Success', successData: response})
-    }catch(e){
+    }catch(e){ 
       dispatch({type: 'Failure', errorMessage: e.message || 'Something went wrong!'})
     }
 

@@ -9,7 +9,7 @@ import { getQuote } from "../lib/api";
 
 const DetailQuote = () => {
   const { sendRequest, status, data:quote, error} = useHttp(getQuote);
-  const match = useRouteMatch();console.log(match);
+  const match = useRouteMatch(); 
   const { quoteID } = useParams();   
 
   useEffect(() => {

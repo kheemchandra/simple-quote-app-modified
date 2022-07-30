@@ -37,7 +37,7 @@ const QuoteForm = (props) => {
         when={isEntering}
         message="Are you sure you want to leave? All your entered data will be lost!"
       />
-      <Card>
+      {!props.error && <Card>
         <form
           onFocus={focusHandler}
           className={classes.form}
@@ -61,7 +61,8 @@ const QuoteForm = (props) => {
             <button onClick={resetIsEnteringHandler} className="btn">Add Quote</button>
           </div>
         </form>
-      </Card>
+      </Card>}
+      {props.error && <p className="centered">Failed to add quote!</p>}
     </Fragment>
   );
 };
