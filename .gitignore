@@ -7,7 +7,7 @@ yarn-error.log*
 
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
+build/
 
 # Dependency directories
 node_modules/
@@ -36,3 +36,8 @@ typings/
 
 # Roadmap for project
 roadmap.md
+
+# Firebase
+.firebase/
+firebase.json
+.firebaserc
